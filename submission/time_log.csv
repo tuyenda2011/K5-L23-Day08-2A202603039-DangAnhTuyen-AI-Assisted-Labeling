@@ -1,1 +1,3 @@
 step,images,minutes,note
+gold_manual,4,29.4,"working_time của CVAT analytics (ClickHouse) cho Job #20 gold-manual; không bấm giờ tay. 59 box vẽ tay (sau khi bỏ 7 box cao < 20 px ở img_036 còn 52) = 7.35 phút/ảnh"
+batch_review,24,35.3,"working_time của CVAT analytics cho Job #21 batch-review (duyệt pre-label: 440 giữ nguyên, 23 sửa, 58 vẽ thêm) = 1.47 phút/ảnh. Job #22 (lô có bẫy) chưa duyệt: 0 phút"
