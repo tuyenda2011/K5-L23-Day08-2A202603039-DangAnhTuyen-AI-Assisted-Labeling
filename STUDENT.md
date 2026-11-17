@@ -2,7 +2,7 @@
 
 - Họ và tên: Đặng Anh Tuyền
 - MSHV: 2A202603039
-- Lớp (L2 / L3 / khác): (chưa điền — học viên tự xác nhận)
+- Lớp (L2 / L3 / khác): L2A-C402
 - Tài khoản GitHub: tuyenda2011
 - Repo bài nộp (URL): https://github.com/tuyenda2011/K5-L23-Day08-2A202603039-DangAnhTuyen-AI-Assisted-Labeling
 - Commit chốt bài (hash): commit mới nhất trên nhánh `main` tại thời điểm nộp (xem lịch sử commit)

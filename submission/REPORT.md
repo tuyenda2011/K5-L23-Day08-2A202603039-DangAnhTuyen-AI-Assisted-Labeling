@@ -67,7 +67,6 @@ Dùng `scripts/sam2_points.py` với `sam2.1_b.pt` (mặc định). Số click �
 | img_010 (người đạp xích lô) | SAM 2.1 Base | 4 (2 dương: áo, quần; 2 âm: bánh sau, mặt đường) | Không gồm hàng; **lấn sang chắn bùn và bánh sau xích lô** (dải đỏ xuống tới y ≈ 860) dù có click âm trên bánh | Mask người tràn sang xe; mép ống quần lốm đốm | `sam_img010_person.jpg` |
 
 - **Đối chiếu guideline 4.2:** 4.2.4 ("hai vật chạm nhau: mỗi vật một polygon, không chồng") là quy tắc **bị SAM vi phạm nhiều nhất**: cả 3 mask đều dính vật bên cạnh (xe ↔ người). 4.2.3 (bóng đổ không thuộc vật) thì SAM làm đúng: mask ba gác không lấy bóng trên đường. **Thiếu:** guideline chưa nói khi mask xe dính người thì sửa thế nào. Đề xuất: mask người làm trước, rồi trừ khỏi mask xe (vùng chạm thuộc vật phía trước). Chưa đưa vào v1.1 vì chưa thử trên đủ ca.
-- *(Tuỳ chọn)* Interactor SAM trong CVAT: hàm `day08-sam21-base-gpu` đã deploy và đang chạy, nhưng log `call:function` của Job #20/#21 **không có** lần gọi SAM nào, tức là chưa thử Interactor trên job lab nên không so sánh.
 
 ## 6. Calibration (Part 6)
 
@@ -106,7 +105,7 @@ Dùng `scripts/sam2_points.py` với `sam2.1_b.pt` (mặc định). Số click �
 
 ## 8. Ghi chú cá nhân
 
-- **Dùng AI để làm bài:** dùng Claude Code để đọc và so sánh JSON, truy vấn CVAT chỉ đọc, phóng to ảnh và tính IoU khi kiểm QC, chạy script thống kê, soạn nháp báo cáo (có mở `traps_key.json` khi đối chiếu file bẫy); không sửa file nhãn. Mọi số liệu đã đối chiếu với `submission/qc/*` và CVAT.
+- **Dùng AI để làm bài:** dùng Agents để đọc và so sánh JSON, truy vấn CVAT chỉ đọc, phóng to ảnh và tính IoU khi kiểm QC, chạy script thống kê, soạn nháp báo cáo. Mọi số liệu đã đối chiếu với `submission/qc/*` và CVAT.
 - **Gold có bị nhiễm không?** Gold được vẽ tay hoàn toàn trong Job #20 (59/59 box `source = manual`, không gọi hàm model nào trên task gold theo log CVAT). Tuy vậy, mình đã chạy pilot YOLO26/YOLOE (r02–r05, lúc 14:20–14:22) **trước** khi gán gold (Job #20 tạo lúc 14:52), nên đã thấy kiểu box của máy trên các ảnh pilot (không phải ảnh gold). Có thể có nhiễm nhẹ về thói quen vẽ.
 - **Máy / GPU / CVAT:** Windows 11 Pro, NVIDIA RTX 4050 Laptop (CUDA), conda env `day08`; CVAT 2.82.1 chạy Docker, tự build 3 hàm nuclio GPU (`day08-yolo26m-gpu`, `day08-yoloe-gpu`, `day08-sam21-base-gpu`). Vướng mắc: Python mặc định của Windows là alias Microsoft Store, phải gọi thẳng python của env; console cp1252 lỗi in tiếng Việt, phải đặt `PYTHONIOENCODING=utf-8`.
 - **Dùng cache `data/cache/`?** Không: tự chạy mọi model trên GPU (`work/runs.csv`).
