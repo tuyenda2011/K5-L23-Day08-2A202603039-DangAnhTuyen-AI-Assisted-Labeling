@@ -1,0 +1,7 @@
+image,object_id,error_type,reviewer,note
+img_003.jpg,1|4,thua,DangAnhTuyen,"#1 (vẽ tay) và #4 (máy conf 0.86) trùng cùng một người, IoU 0.92: phải xoá một box"
+img_003.jpg,new(~813;280;45x92),bo_sot,DangAnhTuyen,"người ngồi sau xe máy #5 (áo trắng, vai xanh, chân), thấy ~25-35% > ngưỡng 20% mục 4.1.2"
+img_006.jpg,new(~837;477;45x80),bo_sot,DangAnhTuyen,"bé tóc đen ngồi bàn giữa sau bình hồng, thấy đầu+vai; #81 ignore_region che một người ngồi xe: nghi dùng sai ignore, chưa tính lỗi"
+img_014.jpg,131|136,thua,DangAnhTuyen,"#131 (máy 0.63) và #136 (vẽ tay) cùng ôm xe máy đen phía trước bên phải, IoU 0.75"
+img_031.jpg,432,sai_vi_tri_kich_thuoc,DangAnhTuyen,"box người dừng ở hông (y=437) trong khi chân còn thấy sau bánh xe đạp tới ~y=680"
+img_035.jpg,,khong,DangAnhTuyen,"không thấy lỗi rõ; cụm người/xe nhỏ ở xa (x>900) chỉ kiểm ở ảnh 1024px, không chắc chắn"
